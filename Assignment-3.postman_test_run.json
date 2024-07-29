@@ -1,0 +1,680 @@
+{
+	"id": "bda737de-1420-40a8-8ffa-84e5b0d8e01d",
+	"name": "Assignment-3",
+	"timestamp": "2024-07-29T03:40:35.601Z",
+	"collection_id": "31541777-a82a9ae7-7465-4498-82f8-91c170d7e95d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 33,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-07-29T03:40:34.285Z",
+	"totalFail": 10,
+	"results": [
+		{
+			"id": "c1d30d48-2aa5-4081-9841-770d093b4bc7",
+			"name": "User",
+			"url": "http://localhost:5246/user",
+			"time": 27,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Response time is within an acceptable range": true,
+				"Response has the required fields": true,
+				"Email is in a valid format": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is within an acceptable range": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Email is in a valid format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				27
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Response time is within an acceptable range": true,
+					"Response has the required fields": true,
+					"Email is in a valid format": true
+				}
+			]
+		},
+		{
+			"id": "892aa291-151b-4e5b-8324-f73746ca62fa",
+			"name": "User",
+			"url": "http://localhost:5246/user",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type is application/json": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type is application/json": true
+				}
+			]
+		},
+		{
+			"id": "4374067d-b839-49e1-ba3c-be9694ef99bb",
+			"name": "User/{id}",
+			"url": "http://localhost:5246/user/1",
+			"time": 18,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 404": true,
+				"Response has the required fields - type, title, status, and traceId": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields - type, title, status, and traceId": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Response status code is 404": true,
+					"Response has the required fields - type, title, status, and traceId": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "bf1aef94-7c58-41f9-b423-df75c6289258",
+			"name": "User/{id}",
+			"url": "http://localhost:5246/user/2",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 200": false,
+				"Response time is less than 200ms": true,
+				"Content-Type header is set to text/plain": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is set to text/plain": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response status code is 200": false,
+					"Response time is less than 200ms": true,
+					"Content-Type header is set to text/plain": false
+				}
+			]
+		},
+		{
+			"id": "fc86b35b-5fb7-43d9-95f6-c9ad2aeb08ff",
+			"name": "Product",
+			"url": "http://localhost:5246/product",
+			"time": 17,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Response has the required fields": true,
+				"Price and quantity are in valid numeric format": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price and quantity are in valid numeric format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Response has the required fields": true,
+					"Price and quantity are in valid numeric format": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "11bd72be-0bdb-4da8-bb97-437604176c6a",
+			"name": "Product",
+			"url": "http://localhost:5246/product",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "4892df1e-d358-4765-ba03-a33327e44888",
+			"name": "Product/{id}",
+			"url": "http://localhost:5246/product/3",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 200": false,
+				"Response time is less than 200ms": true,
+				"Content-Type header is set to text/plain": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is set to text/plain": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response status code is 200": false,
+					"Response time is less than 200ms": true,
+					"Content-Type header is set to text/plain": false
+				}
+			]
+		},
+		{
+			"id": "659272a0-16aa-44b8-bb49-300fe976bd78",
+			"name": "Order",
+			"url": "http://localhost:5246/order",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Quantity is a non-negative integer": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Quantity is a non-negative integer": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Quantity is a non-negative integer": false
+				}
+			]
+		},
+		{
+			"id": "2747d31d-86cf-4558-a200-dc6466eb439a",
+			"name": "Order",
+			"url": "http://localhost:5246/order",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "e81046a7-ac64-4a6e-929c-abe4d2a0b679",
+			"name": "Order/{id}",
+			"url": "http://localhost:5246/order/1",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Content-Type header is set to text/plain": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is set to text/plain": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Content-Type header is set to text/plain": false
+				}
+			]
+		},
+		{
+			"id": "e1317eb6-4ba6-49a1-8be5-05b9ccf6a1ca",
+			"name": "Cart",
+			"url": "http://localhost:5246/cart",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Response has the required fields - id, product_id, quantity, and user_id": true,
+				"Response time is less than 300ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields - id, product_id, quantity, and user_id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 300ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Response has the required fields - id, product_id, quantity, and user_id": true,
+					"Response time is less than 300ms": true
+				}
+			]
+		},
+		{
+			"id": "d17207fa-4384-4288-8f1e-6b9ee7a0a372",
+			"name": "Cart",
+			"url": "http://localhost:5246/cart",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "3ed921ef-7d54-4f56-8aea-b99d7deccc6f",
+			"name": "Cart/{id}",
+			"url": "http://localhost:5246/cart/2",
+			"time": 5,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 200": false,
+				"Response time is less than 200ms": true,
+				"Content-Type header is set to text/plain": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is set to text/plain": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Response status code is 200": false,
+					"Response time is less than 200ms": true,
+					"Content-Type header is set to text/plain": false
+				}
+			]
+		},
+		{
+			"id": "57682766-9b04-48e9-b0d9-300ee3588e8f",
+			"name": "Comment",
+			"url": "http://localhost:5246/cart",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Product_id is a non-empty string": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product_id is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Product_id is a non-empty string": true
+				}
+			]
+		},
+		{
+			"id": "018ef4d7-cedd-4fee-b528-b740b736af9a",
+			"name": "Comment",
+			"url": "http://localhost:5246/cart",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "07a0a9bd-f4c8-46af-95af-2086729ef9fb",
+			"name": "Comment/{id}",
+			"url": "http://localhost:5246/cart/1",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 200": false,
+				"Response time is less than 200ms": true,
+				"Content-Type header is set to text/plain": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is set to text/plain": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Response status code is 200": false,
+					"Response time is less than 200ms": true,
+					"Content-Type header is set to text/plain": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 154,
+	"collection": {
+		"requests": [
+			{
+				"id": "c1d30d48-2aa5-4081-9841-770d093b4bc7",
+				"method": "POST"
+			},
+			{
+				"id": "892aa291-151b-4e5b-8324-f73746ca62fa",
+				"method": "GET"
+			},
+			{
+				"id": "4374067d-b839-49e1-ba3c-be9694ef99bb",
+				"method": "GET"
+			},
+			{
+				"id": "bf1aef94-7c58-41f9-b423-df75c6289258",
+				"method": "DELETE"
+			},
+			{
+				"id": "fc86b35b-5fb7-43d9-95f6-c9ad2aeb08ff",
+				"method": "POST"
+			},
+			{
+				"id": "11bd72be-0bdb-4da8-bb97-437604176c6a",
+				"method": "GET"
+			},
+			{
+				"id": "4892df1e-d358-4765-ba03-a33327e44888",
+				"method": "DELETE"
+			},
+			{
+				"id": "659272a0-16aa-44b8-bb49-300fe976bd78",
+				"method": "POST"
+			},
+			{
+				"id": "2747d31d-86cf-4558-a200-dc6466eb439a",
+				"method": "GET"
+			},
+			{
+				"id": "e81046a7-ac64-4a6e-929c-abe4d2a0b679",
+				"method": "DELETE"
+			},
+			{
+				"id": "e1317eb6-4ba6-49a1-8be5-05b9ccf6a1ca",
+				"method": "POST"
+			},
+			{
+				"id": "d17207fa-4384-4288-8f1e-6b9ee7a0a372",
+				"method": "GET"
+			},
+			{
+				"id": "3ed921ef-7d54-4f56-8aea-b99d7deccc6f",
+				"method": "DELETE"
+			},
+			{
+				"id": "57682766-9b04-48e9-b0d9-300ee3588e8f",
+				"method": "POST"
+			},
+			{
+				"id": "018ef4d7-cedd-4fee-b528-b740b736af9a",
+				"method": "GET"
+			},
+			{
+				"id": "07a0a9bd-f4c8-46af-95af-2086729ef9fb",
+				"method": "DELETE"
+			}
+		]
+	}
+}
