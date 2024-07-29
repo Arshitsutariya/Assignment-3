@@ -68,42 +68,6 @@ namespace Assign3.Controllers
             return BadRequest(errors);
         }
 
-        // PUT: Order/1
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, Order order)
-        {
-            if (id != order.Id)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Entry(order).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OrderExists(order.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
-            }
-            var errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-            return BadRequest(new { message = $"{errors}" });
-        }
-
-
         // POST: Order/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
@@ -112,12 +76,12 @@ namespace Assign3.Controllers
 
             if (order == null)
             {
-                return NotFound(new { message = $"Order with ID {id} not found." });
+                return NotFound();
             }
 
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
-            return Ok(new { message = $"Order with ID {id} deleted successfully." });
+            return Ok("Order deleted successfully.");
         }
 
         private bool OrderExists(int id)

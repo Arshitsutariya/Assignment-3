@@ -68,42 +68,6 @@ namespace Assign3.Controllers
             return BadRequest(errors);
         }
 
-        // PUT: User/1
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, User user)
-        {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Entry(user).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
-            }
-            var errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-            return BadRequest(new { message = $"{errors}" });
-        }
-
-
         // POST: User/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
@@ -112,12 +76,12 @@ namespace Assign3.Controllers
 
             if (user == null)
             {
-                return NotFound(new { message = $"User with ID {id} not found." });
+                return NotFound();
             }
 
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
-            return Ok(new { message = $"User with ID {id} deleted successfully." });
+            return Ok("User deleted successfully.");
         }
 
         private bool UserExists(int id)

@@ -68,41 +68,6 @@ namespace Assign3.Controllers
             return BadRequest(errors);
         }
 
-        // PUT: Comment/1
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateComment(int id, Comment comment)
-        {
-            if (id != comment.Id)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Entry(comment).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CommentExists(comment.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return CreatedAtAction(nameof(GetComment), new { id = comment.Id }, comment);
-            }
-            var errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-            return BadRequest(new { message = $"{errors}" });
-        }
-
 
         // POST: Comment/1
         [HttpDelete("{id}")]
@@ -112,12 +77,12 @@ namespace Assign3.Controllers
 
             if (comment == null)
             {
-                return NotFound(new { message = $"Comment with ID {id} not found." });
+                return NotFound();
             }
 
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
-            return Ok(new { message = $"Comment with ID {id} deleted successfully." });
+            return Ok("Comment deleted successfully.");
         }
 
         private bool CommentExists(int id)

@@ -68,42 +68,6 @@ namespace Assign3.Controllers
             return BadRequest(errors);
         }
 
-        // PUT: Cart/1
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCart(int id, Cart cart)
-        {
-            if (id != cart.Id)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Entry(cart).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CartExists(cart.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return CreatedAtAction(nameof(GetCart), new { id = cart.Id }, cart);
-            }
-            var errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-            return BadRequest(new { message = $"{errors}" });
-        }
-
-
         // POST: Cart/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCart(int id)
@@ -112,12 +76,12 @@ namespace Assign3.Controllers
 
             if (cart == null)
             {
-                return NotFound(new { message = $"Cart with ID {id} not found." });
+                return NotFound();
             }
 
             _context.Carts.Remove(cart);
             await _context.SaveChangesAsync();
-            return Ok(new { message = $"Cart with ID {id} deleted successfully." });
+            return Ok("Cart deleted successfully.");
         }
 
         private bool CartExists(int id)

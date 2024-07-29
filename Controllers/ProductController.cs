@@ -68,42 +68,6 @@ namespace Assign3.Controllers
             return BadRequest(errors);
         }
 
-        // PUT: Product/1
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, Product product)
-        {
-            if (id != product.Id)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Entry(product).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProductExists(product.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
-            }
-            var errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-            return BadRequest(new { message = $"{errors}" });
-        }
-
-
         // POST: Product/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
@@ -112,12 +76,12 @@ namespace Assign3.Controllers
 
             if (product == null)
             {
-                return NotFound(new { message = $"Product with ID {id} not found." });
+                return NotFound();
             }
 
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
-            return Ok(new { message = $"Product with ID {id} deleted successfully." });
+            return Ok("Product deleted successfully.");
         }
 
         private bool ProductExists(int id)
